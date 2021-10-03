@@ -6,16 +6,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Book {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
+	@NotNull(message = "Name can not be null")
 	private String title;
 	private String author;
 	private int year;
+	@Size(min = 10, max = 13, message = "ISBN must be between 10-13 digits")
 	private String isbn;
 	private double price;
 	
@@ -49,6 +53,10 @@ public class Book {
 
 	public long getId() {
 		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getTitle() {

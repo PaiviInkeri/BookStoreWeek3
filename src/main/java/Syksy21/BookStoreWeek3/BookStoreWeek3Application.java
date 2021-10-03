@@ -21,32 +21,32 @@ public class BookStoreWeek3Application {
 		SpringApplication.run(BookStoreWeek3Application.class, args);
 	}
 	
-	@Bean
-	public CommandLineRunner bookDemo(BookRepository repository, CategoryRepository crepository) {
-		return (args) -> {
-			log.info("save a couple of students");
-			
-			crepository.save(new Category("Detective Story"));
-			crepository.save(new Category("Drama"));
-			crepository.save(new Category("Biography"));
-			crepository.save(new Category("Suspense"));
-			crepository.save(new Category("Romance"));
-				
-			Book book1 = new Book("Loistava ystäväni", "Elena Ferrante", 2016, "9789510414699", 16.99, crepository.findByName("Drama").get(0));
-			Book book2 = new Book("Uuden nimen tarina", "Elena Ferrante", 2017, "ISBN-404088", 16.99, crepository.findByName("Drama").get(0));
-			Book book3 = new Book("Ne jotka lähtevät ja ne jotka jäävät", "Elena Ferrante", 2018, "ISBN-667788", 18.99, crepository.findByName("Drama").get(0));
-					
-			repository.save(book1);
-			repository.save(book2);
-			repository.save(book3);
-			
-			log.info("fetch all books");
-			for (Book book : repository.findAll()) {
-				log.info(book.toString());
-			}
-			
-			
-		};	
-	}
+//	@Bean
+//	public CommandLineRunner bookDemo(BookRepository repository, CategoryRepository crepository) {
+//		return (args) -> {
+//			log.info("save a couple of students");
+//			
+//			crepository.save(new Category("Detective Story"));
+//			crepository.save(new Category("Drama"));
+//			crepository.save(new Category("Biography"));
+//			crepository.save(new Category("Suspense"));
+//			crepository.save(new Category("Romance"));
+//				
+//			Book book1 = new Book("Loistava ystäväni", "Elena Ferrante", 2016, "9789510414699", 16.99, crepository.findByName("Drama").get(0));
+//			Book book2 = new Book("Uuden nimen tarina", "Elena Ferrante", 2017, "ISBN-404088", 16.99, crepository.findByName("Drama").get(0));
+//			Book book3 = new Book("Ne jotka lähtevät ja ne jotka jäävät", "Elena Ferrante", 2018, "ISBN-667788", 18.99, crepository.findByName("Drama").get(0));
+//					
+//			repository.save(book1);
+//			repository.save(book2);
+//			repository.save(book3);
+//			
+//			log.info("fetch all books");
+//			for (Book book : repository.findAll()) {
+//				log.info(book.toString());
+//			}
+//			
+//			
+//		};	
+//	}
 
 }

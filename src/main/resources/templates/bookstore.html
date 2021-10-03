@@ -25,6 +25,8 @@
 		    <th>Price</th>
 		    <th>ISBN</th>
 		    <th>Category</th>
+		    <th></th> <!-- tyhjät sarakkeet painikkeille -->
+		    <th></th>
 		</tr>
 			<tr th:each = "book : ${books}"> <!-- thymeleafin for-each loop, joka iteroi listan books läpi -->
 				<td th:text = "${book.title}"></td>

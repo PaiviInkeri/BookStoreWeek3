@@ -16,7 +16,7 @@
 	</p>
 	
 	<div>
-	<form th:object="${book}" th:action="@{edit/save}" action="#" method="post">
+	<form th:object="${book}" th:action="@{../save}" action="#" method="post">
 	
 			<!-- kirjan id välitetään sivulle piilotettuna, jotta ohjelma päivittää oikeaa kirjaa Controllerissa -->
 			<input type="hidden" id="id" th:field="*{id}" readonly="readonly"/>

@@ -14,7 +14,7 @@ public class Category {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long categoryid;
 	private String name;
 	
 	//yhden suhde moneen -relaatio book-tauluun, JPA mappaa categoryn avulla (ks. Book.java)
@@ -31,7 +31,7 @@ public class Category {
 	}
 
 	public long getId() {
-		return id;
+		return categoryid;
 	}
 
 	public String getName() {
@@ -44,7 +44,7 @@ public class Category {
 	
 	@Override
 	public String toString() {
-		return "Category [id = " + id + ", Category name = " + name + "]";
+		return "Category [id = " + categoryid + ", Category name = " + name + "]";
 		}
 
 }
